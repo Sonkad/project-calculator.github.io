@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Калькулятор Binary</title>
+</head>
+
+<body class="bg-[#DEF2F1] font-roboto">
+    <main class="flex items-center justify-center min-h-screen">
+        <div class="bg-[#17252A] p-6 rounded-lg shadow-lg w-full max-w-lg">
+            <nav class="text-[#FEFFFF] py-4 flex gap-5 justify-center mb-6">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-square-equal">
+                        <rect width="18" height="18" x="3" y="3" rx="2" />
+                        <path d="M7 10h10" />
+                        <path d="M7 14h10" />
+                    </svg>
+                </a>
+                <a href="thermop.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-snow">
+                        <path d="M10 9a3 3 0 1 0 0 6" />
+                        <path d="M2 12h1" />
+                        <path d="M14 21V3" />
+                        <path d="M10 4V3" />
+                        <path d="M10 21v-1" />
+                        <path d="m3.64 18.36.7-.7" />
+                        <path d="m4.34 6.34-.7-.7" />
+                        <path d="M14 12h8" />
+                        <path d="m17 4-3 3" />
+                        <path d="m14 17 3 3" />
+                        <path d="m21 15-3-3 3-3" />
+                    </svg>
+                </a>
+                <a href="calculatorBinary.html" class="text-[#3AAFA9]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-digit">
+						<path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/>
+						<path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+						<rect width="4" height="6" x="2" y="12" rx="2"/>
+						<path d="M10 12h2v6"/>
+						<path d="M10 18h4"/>
+					</svg>
+                </a>
+                <a href="binary.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binary">
+                        <rect x="14" y="14" width="4" height="6" rx="2" />
+                        <rect x="6" y="4" width="4" height="6" rx="2" />
+                        <path d="M6 20h4" />
+                        <path d="M14 10h4" />
+                        <path d="M6 14h2v6" />
+                        <path d="M14 4h2v6" />
+                    </svg>
+                </a>
+                <a href="guessE.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <text x="9" y="14" font-size="31" font-family="Arial, sans-serif" text-anchor="middle"
+                            dominant-baseline="middle">e</text>
+                    </svg>
+                </a>
+            </nav>
+
+            <div class="bg-[#3AAFA9] p-6 rounded-t-lg">
+                <h2 class="text-[#FEFFFF] text-xl font-bold mb-4 text-center">Калькулятор чисел</h2>
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <input id="input1" type="text" placeholder="Число 1"
+                        class="col-span-2 p-3 rounded bg-[#2B7A78] text-[#FEFFFF]" />
+                    <select id="base1" class="p-3 rounded bg-[#2B7A78] text-[#FEFFFF]">
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10" selected>10</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+
+                <div class="flex justify-center gap-2 mb-4">
+                    <button id="add" class="p-3 rounded bg-[#4CAF50] text-[#FEFFFF]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8"/>
+                            <path d="M12 8v8"/>
+                        </svg>
+                    </button>
+                    <button id="subtract" class="p-3 rounded bg-[#FF5722] text-[#FEFFFF]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-minus">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12h8"/>
+                        </svg>
+                    </button>
+                    <button id="multiply" class="p-3 rounded bg-[#FFC107] text-[#FEFFFF]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m15 9-6 6"/>
+                            <path d="m9 9 6 6"/>
+                        </svg>
+                    </button>
+                    <button id="divide" class="p-3 rounded bg-[#03A9F4] text-[#FEFFFF]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-slash">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="9" x2="15" y1="15" y2="9"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <input id="input2" type="text" placeholder="Число 2"
+                        class="col-span-2 p-3 rounded bg-[#2B7A78] text-[#FEFFFF]" />
+                    <select id="base2" class="p-3 rounded bg-[#2B7A78] text-[#FEFFFF]">
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10" selected>10</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4">
+                    <input id="result" type="text" placeholder="Результат" class="col-span-2 p-3 rounded bg-[#2B7A78] text-[#FEFFFF]" readonly />
+                    <select id="outputBase" class="p-3 rounded bg-[#2B7A78] text-[#FEFFFF]">
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10" selected>10</option>
+                        <option value="16">16</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const input1 = document.getElementById('input1');
+        const base1 = document.getElementById('base1');
+        const input2 = document.getElementById('input2');
+        const base2 = document.getElementById('base2');
+        const result = document.getElementById('result');
+        const outputBase = document.getElementById('outputBase');
+
+        const operations = {
+            add: (a, b) => a + b,
+            subtract: (a, b) => a - b,
+            multiply: (a, b) => a * b,
+            divide: (a, b) => a / b,
+        };
+
+        function calculate(operation) {
+            const value1 = parseInt(input1.value, parseInt(base1.value));
+            const value2 = parseInt(input2.value, parseInt(base2.value));
+
+            if (isNaN(value1) || isNaN(value2)) {
+                alert('Введите корректные числа!');
+                return;
+            }
+
+            const resultValue = operations[operation](value1, value2);
+            const resultBase = parseInt(outputBase.value);
+            result.value = resultValue.toString(resultBase).toUpperCase();
+        }
+
+        document.getElementById('add').addEventListener('click', () => calculate('add'));
+        document.getElementById('subtract').addEventListener('click', () => calculate('subtract'));
+        document.getElementById('multiply').addEventListener('click', () => calculate('multiply'));
+        document.getElementById('divide').addEventListener('click', () => calculate('divide'));
+    </script>
+</body>
+
+</html>

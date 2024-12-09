@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+	<script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="scr.js" defer></script>
+	<title>Числовой калькулятор</title>
+</head>
+
+<body class="bg-[#17252A] font-roboto">
+	<main class="flex items-center justify-center min-h-screen">
+		<div class="bg-[#2B7A78] p-6 rounded-lg shadow-lg w-full max-w-lg">
+			<nav class="text-[#FEFFFF] py-4 flex gap-5 justify-center mb-6">
+				<a href='index.html' class='text-[#3AAFA9]'>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-equal">
+						<rect width="18" height="18" x="3" y="3" rx="2"/>
+						<path d="M7 10h10"/>
+						<path d="M7 14h10"/>
+					</svg>
+				</a>
+				<a href="thermop.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-snow">
+						<path d="M10 9a3 3 0 1 0 0 6"/>
+						<path d="M2 12h1"/>
+						<path d="M14 21V3"/>
+						<path d="M10 4V3"/>
+						<path d="M10 21v-1"/>
+						<path d="m3.64 18.36.7-.7"/>
+						<path d="m4.34 6.34-.7-.7"/>
+						<path d="M14 12h8"/>
+						<path d="m17 4-3 3"/>
+						<path d="m14 17 3 3"/>
+						<path d="m21 15-3-3 3-3"/>
+					</svg>
+				</a>
+				<a href="calculatorBinary.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-digit">
+						<path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/>
+						<path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+						<rect width="4" height="6" x="2" y="12" rx="2"/>
+						<path d="M10 12h2v6"/>
+						<path d="M10 18h4"/>
+					</svg>
+				</a>
+				<a href="binary.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-binary">
+						<rect x="14" y="14" width="4" height="6" rx="2"/>
+						<rect x="6" y="4" width="4" height="6" rx="2"/>
+						<path d="M6 20h4"/>
+						<path d="M14 10h4"/>
+						<path d="M6 14h2v6"/>
+						<path d="M14 4h2v6"/>
+					</svg>
+				</a>
+				<a href="guessE.html">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+						<text x="9" y="14" font-size="31" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">e</text>
+					</svg>
+				</a>
+			</nav>
+			<div class="bg-[#DEF2F1] p-4 rounded-t-lg mb-4">
+				<div id="lastOperationScreen" class="text-[#2B7A78] text-right text-sm h-6"></div>
+				<div id="currentOperationScreen" class="text-[#17252A] text-right text-3xl font-bold h-7">0</div>
+			</div>
+			<div class="grid grid-cols-4 gap-2">
+				<button
+					class="text-[#FEFFFF] font-bold py-3 rounded transition duration-200 ease-in-out col-span-2 bg-gray-600 hover:bg-gray-700"
+					id="clearBtn" onclick="this.blur();">
+					CLEAR
+				</button>
+				<button
+					class="text-[#FEFFFF] font-bold py-3 rounded transition duration-200 ease-in-out col-span-2 bg-gray-600 hover:bg-gray-700"
+					id="deleteBtn" onclick="this.blur();">
+					DELETE
+				</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>7</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>8</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>9</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-500 hover:bg-gray-600"
+					onclick="this.blur();" data-operator>÷</button>
+
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>4</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>5</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>6</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-500 hover:bg-gray-600"
+					onclick="this.blur();" data-operator>×</button>
+
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>1</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>2</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>3</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-500 hover:bg-gray-600"
+					onclick="this.blur();" data-operator>−</button>
+
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" id="pointBtn">.</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-600 hover:bg-gray-700"
+					onclick="this.blur();" data-number>0</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-yellow-500 hover:bg-yellow-600"
+					onclick="this.blur();" id="equalsBtn">=</button>
+				<button
+					class="text-white font-bold py-3 rounded transition duration-200 ease-in-out bg-gray-500 hover:bg-gray-600"
+					onclick="this.blur();" data-operator>+</button>
+			</div>
+		</div>
+	</main>
+
+	<style>
+		.btn {
+			@apply text-white font-bold py-3 rounded transition duration-200 ease-in-out;
+		}
+	</style>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>
